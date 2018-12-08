@@ -34,6 +34,9 @@ spring:
           uri: https://gitee.com/zuihou111/zuihou-admin-cloud
 #          uri: https://gitee.com/zuihou111/zuihou-admin-cloud-config-repo
           search-paths: zuihou-config-repo/*/{application}
+        native:
+          search-locations: classpath:/shared
+          native
   rabbitmq:
     host: zuihou.rabbitmq.host
     port: 5672
