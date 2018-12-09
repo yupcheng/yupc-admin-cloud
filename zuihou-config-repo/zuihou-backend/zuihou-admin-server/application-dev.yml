@@ -12,7 +12,7 @@ logging:
 spring:
   rabbitmq:
     host: zuihou.rabbitmq.host
-    port: 5672
+    port: 8081
     password: guest
     username: guest
   redis:
@@ -22,7 +22,7 @@ spring:
 zuihou:
   mysql:
     admin:
-      database: zuihou_admin_dev       # 根据环境更改
+      database: yupc       # 根据环境更改
     host: zuihou.mysql.host     # 根据环境更改
     port: 3306                  # 根据环境更改
     username: root              # 根据环境更改
