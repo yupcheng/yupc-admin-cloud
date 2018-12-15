@@ -1,4 +1,4 @@
-# zuihou-admin-cloud
+# yupc-admin-cloud
 
  测试master
 
@@ -20,9 +20,9 @@ RibbitMQ、FastDFS等主要框架和中间件。
 后期会引入`Docker`（慢慢学，还没到这一步）
 
 ## 项目地址
-[github] https://github.com/zuihou/zuihou-admin-cloud
+[github] https://github.com/yupc/yupc-admin-cloud
 
-[gitee] https://gitee.com/zuihou111/zuihou-admin-cloud
+[gitee] https://gitee.com/yupc111/yupc-admin-cloud
 
 ## 架构详解:
  - 服务注册与调用：
@@ -81,15 +81,15 @@ RibbitMQ、FastDFS等主要框架和中间件。
 
 ## 约定：
 
-- zuihou-xxx-api 项目中提供feign客户端，dto
+- yupc-xxx-api 项目中提供feign客户端，dto
 - 区分po、dto，不要把po中的所有字段都返回给前端。 前端需要什么字段，就返回什么字段
 - 类名：首字母大写驼峰规则；方法名：首字母小写驼峰规则；常量：全大写；变量：首字母小写驼峰规则，尽量非缩写
-- 业务模块接口层命名为`项目`-`业务-api`，如`zuihou-admin-api`
-- 业务模块业务层命名为`项目`-`业务-repository`，如`zuihou-admin-repository`
-- 业务模块容器命名为`项目`-`业务-server`，如`zuihou-admin-server`
-- 监控模块命名为`项目`-`业务`，如`zuihou-admin`
+- 业务模块接口层命名为`项目`-`业务-api`，如`yupc-admin-api`
+- 业务模块业务层命名为`项目`-`业务-repository`，如`yupc-admin-repository`
+- 业务模块容器命名为`项目`-`业务-server`，如`yupc-admin-server`
+- 监控模块命名为`项目`-`业务`，如`yupc-admin`
 - 数据表命名为：`子系统`_`表`，如`b_role`
-- 更多规范，参考[阿里巴巴Java开发手册] https://gitee.com/zuihou111/zuihou-admin-cloud/attach_files
+- 更多规范，参考[阿里巴巴Java开发手册] https://gitee.com/yupc111/yupc-admin-cloud/attach_files
 
 
 
@@ -111,70 +111,70 @@ RibbitMQ、FastDFS等主要框架和中间件。
 ## 项目结构:
 
 ```
-├─zuihou-admin-cloud
+├─yupc-admin-cloud
 │  │  
-│  ├─zuihou-backend---------------------------后端服务
-│  |  ├─zuihou-admin--------------------------后端管理服务[正在开发]
-│  |  |  ├─zuihou-admin-api-------------------后端管理服务api接口
-│  |  |  ├─zuihou-admin-repository------------后端管理业务/持久层
-│  |  |  ├─zuihou-admin-server----------------后端管理服务
-│  |  |─zuihou-base---------------------------基础模块服务[未开始]
-│  |  |  ├─zuihou-base-api--------------------基础模块接口/dto
-│  |  |  ├─zuihou-base-repository-------------基础模块业务/持久层
-│  |  |  ├─zuihou-base-server-----------------基础模块服务
-│  |  ├─zuihou-file---------------------------文件模块服务[正在开发]
-│  |  ├─zuihou-mail---------------------------邮件模块服务[未开始]
-│  |  ├─zuihou-sms----------------------------短信模块服务[未开始]
-│  |  ├─zuihou-auth---------------------------鉴权中心
-│  |  |  |─zuihou-auth-api--------------------鉴权中心api[已开发]
-│  |  |  |─zuihou-auth-client-----------------鉴权中心客户端[已开发]
-│  |  |  |─zuihou-auth-common-----------------鉴权中心公共包[已开发]
-│  |  |  |─zuihou-auth-server-----------------鉴权中心服务[已开发]
-│  |  ├─zuihou-gateway------------------------统一网关负载中心
-│  |  |  |─zuihou-gateway-ratelimit-----------网关限流插件[未开始]
-│  |  |  |─zuihou-gateway-server--------------项目网关服务[未开始]
+│  ├─yupc-backend---------------------------后端服务
+│  |  ├─yupc-admin--------------------------后端管理服务[正在开发]
+│  |  |  ├─yupc-admin-api-------------------后端管理服务api接口
+│  |  |  ├─yupc-admin-repository------------后端管理业务/持久层
+│  |  |  ├─yupc-admin-server----------------后端管理服务
+│  |  |─yupc-base---------------------------基础模块服务[未开始]
+│  |  |  ├─yupc-base-api--------------------基础模块接口/dto
+│  |  |  ├─yupc-base-repository-------------基础模块业务/持久层
+│  |  |  ├─yupc-base-server-----------------基础模块服务
+│  |  ├─yupc-file---------------------------文件模块服务[正在开发]
+│  |  ├─yupc-mail---------------------------邮件模块服务[未开始]
+│  |  ├─yupc-sms----------------------------短信模块服务[未开始]
+│  |  ├─yupc-auth---------------------------鉴权中心
+│  |  |  |─yupc-auth-api--------------------鉴权中心api[已开发]
+│  |  |  |─yupc-auth-client-----------------鉴权中心客户端[已开发]
+│  |  |  |─yupc-auth-common-----------------鉴权中心公共包[已开发]
+│  |  |  |─yupc-auth-server-----------------鉴权中心服务[已开发]
+│  |  ├─yupc-gateway------------------------统一网关负载中心
+│  |  |  |─yupc-gateway-ratelimit-----------网关限流插件[未开始]
+│  |  |  |─yupc-gateway-server--------------项目网关服务[未开始]
 │  │ 
-│  ├─zuihou-common----------------------------公共模块（这里一直没想好怎么调整，有想法的朋友可以给我留言）
-│  |  ├─zuihou-commons------------------------项目公共包
-│  |  ├─zuihou-core---------------------------项目核心包
+│  ├─yupc-common----------------------------公共模块（这里一直没想好怎么调整，有想法的朋友可以给我留言）
+│  |  ├─yupc-commons------------------------项目公共包
+│  |  ├─yupc-core---------------------------项目核心包
 │  │ 
-│  ├─zuihou-frontend--------------------------项目前端
-│  |  ├─zuihou-manage-center------------------管理后台
+│  ├─yupc-frontend--------------------------项目前端
+│  |  ├─yupc-manage-center------------------管理后台
 │  │
-│  ├─zuihou-config-repo-----------------------远程配置文件仓库
+│  ├─yupc-config-repo-----------------------远程配置文件仓库
 │  │
-│  ├─zuihou-service---------------------------服务模块
-│  |  ├─zuihou-config-------------------------配置中心[已开发]
-│  |  ├─zuihou-eureka-------------------------注册中心[已开发]
-│  |  ├─zuihou-monitor------------------------spring-boot-admin监控中心[已开发]
-│  |  ├─zuihou-zipkin-------------------------zipkin分布式链路跟踪[已开发]
+│  ├─yupc-service---------------------------服务模块
+│  |  ├─yupc-config-------------------------配置中心[已开发]
+│  |  ├─yupc-eureka-------------------------注册中心[已开发]
+│  |  ├─yupc-monitor------------------------spring-boot-admin监控中心[已开发]
+│  |  ├─yupc-zipkin-------------------------zipkin分布式链路跟踪[已开发]
 │  │
 │  │-...
 ```
 
 ## 运行步骤: 
  接下来分别介绍开发环境(dev)和正式环境(prod1,prod2)的运行步骤. 
- 生产环境所有服务单例运行，生产环境所有服务运行2个实例（除了zuihou-monitor,zuihou-zipkin.这2个监控服务）
+ 生产环境所有服务单例运行，生产环境所有服务运行2个实例（除了yupc-monitor,yupc-zipkin.这2个监控服务）
 
 ### 开发环境
 - 1, 开发环境(dev)Hosts文件配置：
 ```
-127.0.0.1 casserver.zuihou.com
-127.0.0.1 eureka.zuihou.com
-127.0.0.1 config.zuihou.com
-127.0.0.1 admin.zuihou.com
-127.0.0.1 base.zuihou.com
-127.0.0.1 gateway.zuihou.com
-127.0.0.1 auth.zuihou.com
-127.0.0.1 monitor.zuihou.com
-127.0.0.1 zipkin.zuihou.com zuihou-zipkin
+127.0.0.1 casserver.yupc.com
+127.0.0.1 eureka.yupc.com
+127.0.0.1 config.yupc.com
+127.0.0.1 admin.yupc.com
+127.0.0.1 base.yupc.com
+127.0.0.1 gateway.yupc.com
+127.0.0.1 auth.yupc.com
+127.0.0.1 monitor.yupc.com
+127.0.0.1 zipkin.yupc.com yupc-zipkin
 
-127.0.0.1 zuihou.rabbitmq.host
-127.0.0.1 zuihou.mysql.host
-127.0.0.1 zuihou.redis.host
+127.0.0.1 yupc.rabbitmq.host
+127.0.0.1 yupc.mysql.host
+127.0.0.1 yupc.redis.host
 ```
 - 2, 依次运行数据库脚本：
-    - doc/sql/zuihou_admin_dev.sql
+    - doc/sql/yupc_admin_dev.sql
 
 - 3, 通过以下方法，进行密码加密：
 ```
@@ -183,19 +183,19 @@ RibbitMQ、FastDFS等主要框架和中间件。
     }
 ```
 - 4, 修改配置数据库/redis/rabbitMQ配置：
-    - （画重点）修改配置需要各位自己在github或者gitee上创建自己的仓库，但目录结构需要和`zuihou-config-repo`的结构一致，
-      然后在修改`zuihou-config`服务`application.yml`中的`spring.cloud.config.server.git.uri:`项。（画重点）
+    - （画重点）修改配置需要各位自己在github或者gitee上创建自己的仓库，但目录结构需要和`yupc-config-repo`的结构一致，
+      然后在修改`yupc-config`服务`application.yml`中的`spring.cloud.config.server.git.uri:`项。（画重点）
     - 理论上只需根据自己的需求修改端口、帐号、密码。 ip 尽量采用虚拟域名，统一修改hosts文件。
-    - zuihou-config-repo/zuihou-backend/zuihou-admin-server/application-dev.yml
-    - zuihou-config-repo/zuihou-backend/zuihou-gateway-server/application-dev.yml
-    - zuihou-config-repo/zuihou-backend/zuihou-auth-server/application-dev.yml
-    - zuihou-config-repo/zuihou-backend/zuihou-base-server/application-dev.yml     # 待开发
-    - zuihou-config-repo/zuihou-backend/zuihou-file-server/application-dev.yml     # 待开发
-    - zuihou-config-repo/zuihou-backend/zuihou-mail-server/application-dev.yml     # 待开发
-    - zuihou-config-repo/zuihou-backend/zuihou-sms-server/application-dev.yml      # 待开发
+    - yupc-config-repo/yupc-backend/yupc-admin-server/application-dev.yml
+    - yupc-config-repo/yupc-backend/yupc-gateway-server/application-dev.yml
+    - yupc-config-repo/yupc-backend/yupc-auth-server/application-dev.yml
+    - yupc-config-repo/yupc-backend/yupc-base-server/application-dev.yml     # 待开发
+    - yupc-config-repo/yupc-backend/yupc-file-server/application-dev.yml     # 待开发
+    - yupc-config-repo/yupc-backend/yupc-mail-server/application-dev.yml     # 待开发
+    - yupc-config-repo/yupc-backend/yupc-sms-server/application-dev.yml      # 待开发
 
-    - zuihou-config-repo/zuihou-service/zuihou-zipkin/application-dev.yml
-    - zuihou-config-repo/zuihou-service/zuihou-monitor/application-dev.yml
+    - yupc-config-repo/yupc-service/yupc-zipkin/application-dev.yml
+    - yupc-config-repo/yupc-service/yupc-monitor/application-dev.yml
 
 - 5， 在IDE中启动：
 - 5.1， 在IDE中启动：编译代码，修改启动参数：
@@ -207,41 +207,41 @@ RibbitMQ、FastDFS等主要框架和中间件。
     - 这里只演示其中几个服务， 剩余的服务，按照相同的方法配置
     - 最终运行实例: ![启动.png](doc/image/启动配置/开发环境运行实例.png)
 - 5.2，按`顺序`运行main类：
-    - EurekaApplication（zuihou-eureka）  # 第一步
-    - ConfigApplication（zuihou-config）  # 第二步
-    - AdminServerApplication（zuihou-admin-server）  #下面的顺序无所谓
-    - AuthApplication（zuihou-auth-server）
-    - GatewayServerApplication（zuihou-gateway-server）
-    - MonitorApplication（zuihou-monitor）
-    - ZipkinApplication（zuihou-zipkin）
+    - EurekaApplication（yupc-eureka）  # 第一步
+    - ConfigApplication（yupc-config）  # 第二步
+    - AdminServerApplication（yupc-admin-server）  #下面的顺序无所谓
+    - AuthApplication（yupc-auth-server）
+    - GatewayServerApplication（yupc-gateway-server）
+    - MonitorApplication（yupc-monitor）
+    - ZipkinApplication（yupc-zipkin）
 
 - 6， 命令行启动:
     - 先cd 到各个服务的target目录，依次启动即可：
-    - java -jar -Dspring.profiles.active=dev zuihou-eureka.jar 
-    - java -jar -Dspring.profiles.active=dev zuihou-config.jar 
-    - java -jar -Dspring.profiles.active=dev zuihou-***.jar  
+    - java -jar -Dspring.profiles.active=dev yupc-eureka.jar 
+    - java -jar -Dspring.profiles.active=dev yupc-config.jar 
+    - java -jar -Dspring.profiles.active=dev yupc-***.jar  
 
 ### 生产环境 
 
 - 1, 生产环境(prod1,prod2)Hosts文件配置：
 ```
-127.0.0.1 casserver.zuihou.com
-127.0.0.1 eureka1.zuihou.com eureka2.zuihou.com
-127.0.0.1 config1.zuihou.com config2.zuihou.com  
-127.0.0.1 admin1.zuihou.com admin2.zuihou.com
-127.0.0.1 base1.zuihou.com base2.zuihou.com
-127.0.0.1 gateway1.zuihou.com gateway2.zuihou.com
-127.0.0.1 auth1.zuihou.com auth2.zuihou.com
-127.0.0.1 monitor.zuihou.com
-127.0.0.1 zipkin.zuihou.com zuihou-zipkin
+127.0.0.1 casserver.yupc.com
+127.0.0.1 eureka1.yupc.com eureka2.yupc.com
+127.0.0.1 config1.yupc.com config2.yupc.com  
+127.0.0.1 admin1.yupc.com admin2.yupc.com
+127.0.0.1 base1.yupc.com base2.yupc.com
+127.0.0.1 gateway1.yupc.com gateway2.yupc.com
+127.0.0.1 auth1.yupc.com auth2.yupc.com
+127.0.0.1 monitor.yupc.com
+127.0.0.1 zipkin.yupc.com yupc-zipkin
 
-127.0.0.1 zuihou.rabbitmq.host
-127.0.0.1 zuihou.mysql.host
-127.0.0.1 zuihou.redis.host
+127.0.0.1 yupc.rabbitmq.host
+127.0.0.1 yupc.mysql.host
+127.0.0.1 yupc.redis.host
 ```
 
 - 2, 依次运行数据库脚本：
-    - doc/sql/zuihou_admin_prod.sql  (数据库，redis，rabbitmq 暂时不考虑高可用)
+    - doc/sql/yupc_admin_prod.sql  (数据库，redis，rabbitmq 暂时不考虑高可用)
 
 - 3, 通过以下方法，进行密码加密：
 ```
@@ -254,16 +254,16 @@ RibbitMQ、FastDFS等主要框架和中间件。
     - 理论上只需根据自己的需求修改端口、帐号、密码。 ip 尽量采用虚拟域名，统一修改hosts文件。
     - prod1 代表实例1  prod2 代表实例2 ， 实例1和实例2 的启动端口根据自己的情况进行修改，但最好跟我的保持一致
 
-    - zuihou-config-repo/zuihou-backend/zuihou-admin-server/application-prod*.yml
-    - zuihou-config-repo/zuihou-backend/zuihou-gateway-server/application-prod*.yml
-    - zuihou-config-repo/zuihou-backend/zuihou-auth-server/application-prod*.yml
-    - zuihou-config-repo/zuihou-backend/zuihou-base-server/application-prod*.yml     # 待开发
-    - zuihou-config-repo/zuihou-backend/zuihou-file-server/application-prod*.yml     # 待开发
-    - zuihou-config-repo/zuihou-backend/zuihou-mail-server/application-prod*.yml     # 待开发
-    - zuihou-config-repo/zuihou-backend/zuihou-sms-server/application-prod*.yml      # 待开发
+    - yupc-config-repo/yupc-backend/yupc-admin-server/application-prod*.yml
+    - yupc-config-repo/yupc-backend/yupc-gateway-server/application-prod*.yml
+    - yupc-config-repo/yupc-backend/yupc-auth-server/application-prod*.yml
+    - yupc-config-repo/yupc-backend/yupc-base-server/application-prod*.yml     # 待开发
+    - yupc-config-repo/yupc-backend/yupc-file-server/application-prod*.yml     # 待开发
+    - yupc-config-repo/yupc-backend/yupc-mail-server/application-prod*.yml     # 待开发
+    - yupc-config-repo/yupc-backend/yupc-sms-server/application-prod*.yml      # 待开发
 
-    - zuihou-config-repo/zuihou-service/zuihou-zipkin/application-prod*.yml
-    - zuihou-config-repo/zuihou-service/zuihou-monitor/application-prod*.yml
+    - yupc-config-repo/yupc-service/yupc-zipkin/application-prod*.yml
+    - yupc-config-repo/yupc-service/yupc-monitor/application-prod*.yml
 
 
 - 5， 在IDE中启动：
@@ -275,75 +275,75 @@ RibbitMQ、FastDFS等主要框架和中间件。
     - 这里只演示其中几个服务， 剩余的服务，按照相同的方法配置
 
 - 5.2，按`顺序`运行main类：
-    - EurekaApplication（zuihou-eureka）  # 第一步
-    - ConfigApplication（zuihou-config）  # 第二步
-    - AdminServerApplication（zuihou-admin-server）  #下面的顺序无所谓
-    - AuthApplication（zuihou-auth-server）
-    - GatewayServerApplication（zuihou-gateway-server）
-    - MonitorApplication（zuihou-monitor）
-    - ZipkinApplication（zuihou-zipkin）
+    - EurekaApplication（yupc-eureka）  # 第一步
+    - ConfigApplication（yupc-config）  # 第二步
+    - AdminServerApplication（yupc-admin-server）  #下面的顺序无所谓
+    - AuthApplication（yupc-auth-server）
+    - GatewayServerApplication（yupc-gateway-server）
+    - MonitorApplication（yupc-monitor）
+    - ZipkinApplication（yupc-zipkin）
 
 - 6， 命令行启动:
     - 先cd 到各个服务的target目录，依次启动即可：
-    - java -jar -Dspring.profiles.active=prod1 zuihou-eureka.jar 
-    - java -jar -Dspring.profiles.active=prod2 zuihou-eureka.jar 
-    - java -jar -Dspring.profiles.active=prod1 zuihou-config.jar 
-    - java -jar -Dspring.profiles.active=prod2 zuihou-config.jar 
-    - java -jar -Dspring.profiles.active=prod zuihou-monitor.jar    # 这2个是监控服务，暂时不部署多实例(别问为什么，运行太多屌丝机器吃不消)          
-    - java -jar -Dspring.profiles.active=prod zuihou-zipkin.jar     # 这2个是监控服务，暂时不部署多实例(别问为什么，运行太多屌丝机器吃不消) 
-    - java -jar -Dspring.profiles.active=prod1 zuihou-***.jar  
-    - java -jar -Dspring.profiles.active=prod2 zuihou-***.jar  
+    - java -jar -Dspring.profiles.active=prod1 yupc-eureka.jar 
+    - java -jar -Dspring.profiles.active=prod2 yupc-eureka.jar 
+    - java -jar -Dspring.profiles.active=prod1 yupc-config.jar 
+    - java -jar -Dspring.profiles.active=prod2 yupc-config.jar 
+    - java -jar -Dspring.profiles.active=prod yupc-monitor.jar    # 这2个是监控服务，暂时不部署多实例(别问为什么，运行太多屌丝机器吃不消)          
+    - java -jar -Dspring.profiles.active=prod yupc-zipkin.jar     # 这2个是监控服务，暂时不部署多实例(别问为什么，运行太多屌丝机器吃不消) 
+    - java -jar -Dspring.profiles.active=prod1 yupc-***.jar  
+    - java -jar -Dspring.profiles.active=prod2 yupc-***.jar  
 
 
 ## 端口号介绍（dev）:
 
 | 服务 | 端口号 |
 |:----:|:----:|
-| zuihou-eureka | 8500 |  ​
-| zuihou-config | 8505 |  ​
-| zuihou-zipkin | 8510 |  ​ 
-| zuihou-monitor | 8515,8516 |  ​
+| yupc-eureka | 8500 |  ​
+| yupc-config | 8505 |  ​
+| yupc-zipkin | 8510 |  ​ 
+| yupc-monitor | 8515,8516 |  ​
 | - | - |​- | ​
-| zuihou-auth-server | 9775 |  ​
-| zuihou-gateway-server | 9770 |  ​
-| zuihou-admin-server | 9765 |  ​
-| zuihou-base-server | 9760 |  ​
-| zuihou-file-server | 9755 |  ​
-| zuihou-sms-server | 9750 |  ​
-| zuihou-email-server | 9745 |  ​
+| yupc-auth-server | 9775 |  ​
+| yupc-gateway-server | 9770 |  ​
+| yupc-admin-server | 9765 |  ​
+| yupc-base-server | 9760 |  ​
+| yupc-file-server | 9755 |  ​
+| yupc-sms-server | 9750 |  ​
+| yupc-email-server | 9745 |  ​
 
 - 端口号介绍（prod）:
 
 | 服务 | 端口号1 | 端口号2 |
 |:----:|:----:|:----:|
-| zuihou-eureka | 8501 | 8502 | ​
-| zuihou-config | 8506 | 8507 | 
-| zuihou-zipkin | 8511 | 8512 |
-| zuihou-monitor | 8515,8516 | 8517,8518 |  ​
+| yupc-eureka | 8501 | 8502 | ​
+| yupc-config | 8506 | 8507 | 
+| yupc-zipkin | 8511 | 8512 |
+| yupc-monitor | 8515,8516 | 8517,8518 |  ​
 | - | - |​- |
-| zuihou-auth-server | 9776 | 9777 |  ​
-| zuihou-gateway-server | 9771 | 9772 | 
-| zuihou-admin-server | 9766 | 9767 |  ​
-| zuihou-base-server | 9761 | 9762 |  ​
-| zuihou-file-server | 9756 | 9757 |  ​
-| zuihou-sms-server | 9751 | 9752 | ​​
-| zuihou-email-server | 9746 | 9747 | ​​
+| yupc-auth-server | 9776 | 9777 |  ​
+| yupc-gateway-server | 9771 | 9772 | 
+| yupc-admin-server | 9766 | 9767 |  ​
+| yupc-base-server | 9761 | 9762 |  ​
+| yupc-file-server | 9756 | 9757 |  ​
+| yupc-sms-server | 9751 | 9752 | ​​
+| yupc-email-server | 9746 | 9747 | ​​
 
 ## 项目截图：
 spring-boot-admin监控界面:
-![SBA监控.png](doc/image/监控界面/zuihou-monitor监控界面1.png)
+![SBA监控.png](doc/image/监控界面/yupc-monitor监控界面1.png)
 spring-boot-admin监控界面:
-![SBA监控.png](doc/image/监控界面/zuihou-monitor监控界面2.png)
+![SBA监控.png](doc/image/监控界面/yupc-monitor监控界面2.png)
 spring-boot-admin监控界面:
-![SBA监控.png](doc/image/监控界面/zuihou-monitor监控界面3.png)
+![SBA监控.png](doc/image/监控界面/yupc-monitor监控界面3.png)
 spring-boot-admin监控界面:
-![SBA监控.png](doc/image/监控界面/zuihou-monitor监控界面4.png)
+![SBA监控.png](doc/image/监控界面/yupc-monitor监控界面4.png)
 spring-boot-admin监控界面:
-![SBA监控.png](doc/image/监控界面/zuihou-monitor监控界面5.png)
+![SBA监控.png](doc/image/监控界面/yupc-monitor监控界面5.png)
 zipkin监控界面:
-![zipkin监控.png](doc/image/监控界面/zuihou-zipkin监控界面1.png)
+![zipkin监控.png](doc/image/监控界面/yupc-zipkin监控界面1.png)
 zipkin监控界面:
-![zipkin监控.png](doc/image/监控界面/zuihou-zipkin监控界面2.png)
+![zipkin监控.png](doc/image/监控界面/yupc-zipkin监控界面2.png)
 API 界面:
 ![admin-api.png](doc/image/项目相关/admin-api.png)
 注册中心界面:

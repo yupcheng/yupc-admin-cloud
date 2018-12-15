@@ -4,7 +4,7 @@ Navicat MySQL Data Transfer
 Source Server         : 127.0.0.1
 Source Server Version : 50709
 Source Host           : 127.0.0.1:3306
-Source Database       : zuihou_base_dev
+Source Database       : yupc_base_dev
 
 Target Server Type    : MYSQL
 Target Server Version : 50709
