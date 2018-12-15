@@ -1,6 +1,6 @@
 package com.github.yupc.admin;
 
-import com.github.yupc.auth.client.EnableyupcAuthClient;
+import com.github.yupc.auth.client.EnableYupcAuthClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(excludeFilters = {
     @ComponentScan.Filter(type = FilterType.REGEX,pattern = "com.github.yupc.admin.rest.[a-zA-Z]+.api.hystrix.[a-zA-Z]+")
 })
-@EnableyupcAuthClient
+@EnableYupcAuthClient
 public class AdminApplication {
     public static void main(String[] args) {
         SpringApplication.run(AdminApplication.class, args);

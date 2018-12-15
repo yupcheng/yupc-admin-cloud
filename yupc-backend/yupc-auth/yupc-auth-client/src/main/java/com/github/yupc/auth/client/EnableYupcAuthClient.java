@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 
 /**
  * 启用授权client
- * @author yupc
+ * @author zuihou
  * @createTime 2017-12-13 15:26
  */
 @Target(ElementType.TYPE)
@@ -20,5 +20,5 @@ import java.lang.annotation.Target;
 @Import(AutoConfiguration.class)
 @Documented
 @Inherited
-public @interface EnableyupcAuthClient {
+public @interface EnableYupcAuthClient {
 }

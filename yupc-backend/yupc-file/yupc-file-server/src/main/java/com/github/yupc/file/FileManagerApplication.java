@@ -1,6 +1,6 @@
 package com.github.yupc.file;
 
-import com.github.yupc.auth.client.EnableyupcAuthClient;
+import com.github.yupc.auth.client.EnableYupcAuthClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableDiscoveryClient
 @EnableHystrix
 @EnableTransactionManagement
-@EnableyupcAuthClient
+@EnableYupcAuthClient
 public class FileManagerApplication {
     public static void main(String[] args) {
         SpringApplication.run(FileManagerApplication.class, args);
