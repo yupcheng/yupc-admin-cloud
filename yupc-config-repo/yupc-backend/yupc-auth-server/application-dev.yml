@@ -16,7 +16,7 @@ spring:
 yupc:
   mysql:
     admin:
-      database: yupc_admin_dev
+      database: yupc
 
 logging:
   level:
